@@ -1,0 +1,13 @@
+{%extends 'base.html'%} {%block title%} Posts {%endblock%} {%block
+header%}Blogly Recent Posts{%endblock%}{%block content%}
+<div class="post_list">
+  {%for p in posts%}
+  <div>
+    <a href="/posts/{{p.id}}"><h3>{{p.title}}</h3></a>
+    <p>{{p.content}}</p>
+    <a href="/users/{{p.user_id}}"> <p>by {{p.user.get_full_name}}</p></a>
+  </div>
+  {%endfor%}
+</div>
+<a href="/"> <button class="main_btn">Go back</button></a>
+{%endblock%}

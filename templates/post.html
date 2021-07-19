@@ -1,0 +1,14 @@
+{%extends 'base.html'%} {%block title%} Post {%endblock%}{%block header%}Edit
+{{post.title}} {%endblock%} {%block content%}
+<div class="post">
+  <h3>{{post.title}}</h3>
+  <p>{{post.content}}</p>
+  <p>by {{post.user.get_full_name}}</p>
+  <p>at {{post.friendly_date}}</p>
+  <a href="/"> <button class="main_btn">Cancel</button></a>
+  <a href="/posts/{{post.id}}/edit"> <button class="main_btn">Edit</button></a>
+  <a href="/posts/{{post.id}}/delete">
+    <button class="main_btn">Delete</button></a
+  >
+  {%endblock%}
+</div>

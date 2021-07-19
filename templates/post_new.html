@@ -1,0 +1,30 @@
+{%extends 'base.html'%} {%block title%} Post {%endblock%}{%block header%}Add
+post for {{user.get_full_name}} {%endblock%} {%block content%}
+<div class="post">
+  <form action="/users/{{user.id}}/post/new" method="POST">
+    <div class="user_from_div">
+      <label for="">Title</label><br />
+      <input
+        type="text"
+        name="title"
+        placeholder="Enter a title"
+        required
+      /><br />
+    </div>
+    <div class="user_from_div">
+      <label for="">Content</label><br />
+      <textarea
+        type="text"
+        name="content"
+        placeholder="..."
+        required
+        rows="4"
+        cols="50"
+      ></textarea
+      ><br />
+    </div>
+    <button>Add</button>
+  </form>
+  <a href="/"> <button class="main_btn">Go back</button></a>
+  {%endblock%}
+</div>
